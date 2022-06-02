@@ -13,7 +13,7 @@ Cloud Engineer Tasks:-
 
 ## Prometheus/Grafana setup:-  
 
-1. Deployed Prometheus and Grafana on the K8s cluster with Grafana accessible on http://85.215.165.159:3000/ with user- **admin** and pass= **AStrongPassword**
+1. Deployed Prometheus and Grafana on the K8s cluster with Grafana accessible on http://85.215.165.159:3000/ with user- ***admin*** and pass= ***AStrongPassword***
 2. Prometheus accessible at http://85.215.165.161:8080/ 
 3. Created all the required yaml manifest files for running the stack in default namespace
 4. Exposes the Grafana and Prometheus service as LB to access from the internet.
@@ -26,6 +26,7 @@ Cloud Engineer Tasks:-
 ## Grafana Dashboard:- 
 
 1. Created the Grafana dashboard for showing the status of target.
+
    Status - UP/DOWN (probe_success)
    
    HTTP status code (probe_http_status_code)
