@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prom-blackbox
+  labels:
+    app: blackbox
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blackbox
+  template:
+    metadata:
+      labels:
+        app: blackbox
+    spec:
+      containers:
+        - name: blackbox
+          image: prom/blackbox-exporter:latest
+          imagePullPolicy: Always
+          securityContext:
+            runAsUser: 1000
+            runAsNonRoot: true
+          args:
+            - "--config.file=/config/blackbox.yml"
+          ports:
+            - containerPort: 9115
+          volumeMounts:
+            - name: blackbox-config
+              mountPath: /config
+      serviceAccountName: prom-sa
+      volumes:
+        - name: blackbox-config
+          configMap:
+            defaultMode: 420
+            name: blackbox-config
