@@ -8,8 +8,8 @@ terraform {
 }
 
 provider "ionoscloud" {
-  username = "16_9T1N93gCdJ@itohm.de"
-  password = "!;0H3;Sl;u"
+  username = ""
+  password = ""
 }
 
 # export TF_VAR_ionos_username="username"
